@@ -160,7 +160,7 @@ def charger_modele():
     vocab_size = tokenizer.get_vocab_size()
 
     model = Transformer(vocab_size, d_model=128, num_heads=8, num_layers=4, d_ff=512, max_len=350, dropout=0.1)
-    model.load_state_dict(torch.load("best_model_large.pt", map_location=device))
+    model.load_state_dict(torch.load("best_model_large.pt", map_location=device, weights_only=False))
     model.to(device)
     model.eval()
 
